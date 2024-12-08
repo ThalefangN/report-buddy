@@ -1,5 +1,5 @@
 import { useNavigate } from 'react-router-dom';
-import { Mail, Lock } from 'lucide-react';
+import { Mail, Lock, Facebook, Chrome } from 'lucide-react';
 import { Button } from '@/components/ui/button';
 import { Input } from '@/components/ui/input';
 
@@ -52,11 +52,11 @@ const SignIn = () => {
 
           <div className="grid grid-cols-2 gap-4">
             <button className="social-button">
-              <img src="/google.svg" alt="Google" className="w-5 h-5" />
+              <Chrome className="w-5 h-5" />
               <span>Google</span>
             </button>
             <button className="social-button">
-              <img src="/facebook.svg" alt="Facebook" className="w-5 h-5" />
+              <Facebook className="w-5 h-5" />
               <span>Facebook</span>
             </button>
           </div>

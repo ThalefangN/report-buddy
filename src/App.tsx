@@ -7,6 +7,8 @@ import OnboardingSlides from "./components/OnboardingSlides";
 import SignUp from "./components/SignUp";
 import OTPVerification from "./components/OTPVerification";
 import SignIn from "./components/SignIn";
+import VerifyIdentity from "./components/VerifyIdentity";
+import VerificationPending from "./components/VerificationPending";
 
 const queryClient = new QueryClient();
 
@@ -22,6 +24,8 @@ const App = () => (
           <Route path="/signup" element={<SignUp />} />
           <Route path="/verify-otp" element={<OTPVerification />} />
           <Route path="/signin" element={<SignIn />} />
+          <Route path="/verify-identity" element={<VerifyIdentity />} />
+          <Route path="/verification-pending" element={<VerificationPending />} />
         </Routes>
       </BrowserRouter>
     </TooltipProvider>

@@ -1,14 +1,16 @@
 import { useState } from 'react';
 import { useNavigate } from 'react-router-dom';
-import { User, Mail, Lock, Phone } from 'lucide-react';
+import { User, Mail, Lock, Phone, Facebook, Chrome, Flag } from 'lucide-react';
 import { Button } from '@/components/ui/button';
 import { Input } from '@/components/ui/input';
 import { Checkbox } from '@/components/ui/checkbox';
 import { toast } from 'sonner';
+import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from "@/components/ui/select";
 
 const SignUp = () => {
   const navigate = useNavigate();
   const [agreed, setAgreed] = useState(false);
+  const [countryCode, setCountryCode] = useState('+1');
 
   const handleSubmit = (e: React.FormEvent) => {
     e.preventDefault();
@@ -55,14 +57,30 @@ const SignUp = () => {
             />
           </div>
 
-          <div className="input-group">
-            <Phone className="input-icon" />
-            <Input 
-              type="tel"
-              placeholder="Phone Number"
-              className="pl-10"
-              required
-            />
+          <div className="flex gap-2">
+            <div className="w-1/3">
+              <Select value={countryCode} onValueChange={setCountryCode}>
+                <SelectTrigger>
+                  <Flag className="w-4 h-4 mr-2" />
+                  <SelectValue placeholder="Code" />
+                </SelectTrigger>
+                <SelectContent>
+                  <SelectItem value="+1">🇺🇸 +1</SelectItem>
+                  <SelectItem value="+44">🇬🇧 +44</SelectItem>
+                  <SelectItem value="+91">🇮🇳 +91</SelectItem>
+                  <SelectItem value="+86">🇨🇳 +86</SelectItem>
+                </SelectContent>
+              </Select>
+            </div>
+            <div className="input-group flex-1">
+              <Phone className="input-icon" />
+              <Input 
+                type="tel"
+                placeholder="Phone Number"
+                className="pl-10"
+                required
+              />
+            </div>
           </div>
 
           <div className="flex items-center space-x-2">
@@ -94,11 +112,11 @@ const SignUp = () => {
 
           <div className="grid grid-cols-2 gap-4">
             <button className="social-button">
-              <img src="/google.svg" alt="Google" className="w-5 h-5" />
+              <Chrome className="w-5 h-5" />
               <span>Google</span>
             </button>
             <button className="social-button">
-              <img src="/facebook.svg" alt="Facebook" className="w-5 h-5" />
+              <Facebook className="w-5 h-5" />
               <span>Facebook</span>
             </button>
           </div>
