@@ -1,6 +1,6 @@
 import { useState } from 'react';
 import { useNavigate } from 'react-router-dom';
-import { User, Mail, Lock, Phone, Check } from 'lucide-react';
+import { User, Mail, Lock, Phone } from 'lucide-react';
 import { Button } from '@/components/ui/button';
 import { Input } from '@/components/ui/input';
 import { Checkbox } from '@/components/ui/checkbox';
@@ -95,11 +95,11 @@ const SignUp = () => {
           <div className="grid grid-cols-2 gap-4">
             <button className="social-button">
               <img src="/google.svg" alt="Google" className="w-5 h-5" />
-              Google
+              <span>Google</span>
             </button>
             <button className="social-button">
               <img src="/facebook.svg" alt="Facebook" className="w-5 h-5" />
-              Facebook
+              <span>Facebook</span>
             </button>
           </div>
         </form>
